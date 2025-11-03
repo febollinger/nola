@@ -56,4 +56,6 @@ export class Coupons {
   @ManyToOne(() => Brands, (brands) => brands.coupons)
   @JoinColumn([{ name: "brand_id", referencedColumnName: "id" }])
   brand!: Brands;
+
 }
+
