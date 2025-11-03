@@ -1,6 +1,7 @@
 import { Router } from "express"
-import { getStoresController } from "../controllers/stores.controller.js"
+import { getStoreByIdController, getStoreController } from "../controllers/stores.controller.js"
 
 export const storesRoute = Router()
 
-storesRoute.get("/", getStoresController)
+storesRoute.get("", getStoreController)
+storesRoute.get("/:id", getStoreByIdController)

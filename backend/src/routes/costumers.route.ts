@@ -1,6 +1,10 @@
 import { Router } from "express";
-import { getCostumersController } from "../controllers/costumers.controller.js";
+import { createCustomersController, getCustomersController, editCustomersByIdController, getCustomersByIdController, getLoyalCustomersController } from "../controllers/customers.controller.js";
 
-export const costumersRoute = Router()
+export const customersRoute = Router()
 
-costumersRoute.get("/", getCostumersController)
+customersRoute.get("", getCustomersController)
+customersRoute.get("/loyal", getLoyalCustomersController)
+customersRoute.get("/:id", getCustomersByIdController)
+customersRoute.post("", createCustomersController)
+customersRoute.patch("/:id", editCustomersByIdController)
