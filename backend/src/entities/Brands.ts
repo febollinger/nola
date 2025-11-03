@@ -4,6 +4,7 @@ import {
   Index,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation,
 } from "typeorm";
 import { Categories } from "./Categories.js";
 import { Channels } from "./Channels.js";
@@ -38,7 +39,7 @@ export class Brands {
   channels!: Channels[];
 
   @OneToMany(() => Coupons, (coupons) => coupons.brand)
-  coupons!: Coupons[];
+  coupons!: Relation<Coupons>[];
 
   @OneToMany(() => Items, (items) => items.brand)
   items!: Items[];

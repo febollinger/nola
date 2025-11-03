@@ -6,8 +6,9 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
-import { CouponSales } from "./CouponSales.js";
+import {CouponSales} from "./CouponSales.js";
 import { Brands } from "./Brands.js";
 
 @Index("coupons_pkey", ["id"], { unique: true })
@@ -55,7 +56,7 @@ export class Coupons {
 
   @ManyToOne(() => Brands, (brands) => brands.coupons)
   @JoinColumn([{ name: "brand_id", referencedColumnName: "id" }])
-  brand!: Brands;
+  brand!: Relation<Brands>;
 
 }
 

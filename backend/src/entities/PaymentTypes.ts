@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { Brands } from "./Brands.js";
 import { Payments } from "./Payments.js";
@@ -21,7 +22,7 @@ export class PaymentTypes {
 
   @ManyToOne(() => Brands, (brands) => brands.paymentTypes)
   @JoinColumn([{ name: "brand_id", referencedColumnName: "id" }])
-  brand!: Brands;
+  brand!: Relation<Brands>;
 
   @OneToMany(() => Payments, (payments) => payments.paymentType)
   payments!: Payments[];

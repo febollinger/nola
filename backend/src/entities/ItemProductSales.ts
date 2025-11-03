@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { ItemItemProductSales } from "./ItemItemProductSales.js";
 import { Items } from "./Items.js";
@@ -65,5 +66,5 @@ export class ItemProductSales {
     { onDelete: "CASCADE" }
   )
   @JoinColumn([{ name: "product_sale_id", referencedColumnName: "id" }])
-  productSale!: ProductSales;
+  productSale!: Relation<ProductSales>;
 }

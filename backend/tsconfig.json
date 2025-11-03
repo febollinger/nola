@@ -10,7 +10,9 @@
     "moduleResolution": "nodenext",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "target": "esnext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2020",
     "types": [
       "node"
     ],
