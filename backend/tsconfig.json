@@ -8,6 +8,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "target": "esnext",
     "types": [
       "node"
