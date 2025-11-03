@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { ItemItemProductSales } from "./ItemItemProductSales.js";
 import { ItemProductSales } from "./ItemProductSales.js";
@@ -46,13 +47,13 @@ export class OptionGroups {
 
   @ManyToOne(() => Brands, (brands) => brands.optionGroups)
   @JoinColumn([{ name: "brand_id", referencedColumnName: "id" }])
-  brand!: Brands;
+  brand!: Relation<Brands>;
 
   @ManyToOne(() => Categories, (categories) => categories.optionGroups)
   @JoinColumn([{ name: "category_id", referencedColumnName: "id" }])
-  category!: Categories;
+  category!: Relation<Categories>;
 
   @ManyToOne(() => SubBrands, (subBrands) => subBrands.optionGroups)
   @JoinColumn([{ name: "sub_brand_id", referencedColumnName: "id" }])
-  subBrand!: SubBrands;
+  subBrand!: Relation<SubBrands>;
 }

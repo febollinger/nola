@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { CouponSales } from "./CouponSales.js";
 import { DeliveryAddresses } from "./DeliveryAddresses.js";
@@ -153,17 +154,17 @@ export class Sales {
 
   @ManyToOne(() => Channels, (channels) => channels.sales)
   @JoinColumn([{ name: "channel_id", referencedColumnName: "id" }])
-  channel!: Channels;
+  channel!: Relation<Channels>;
 
   @ManyToOne(() => Customers, (customers) => customers.sales)
   @JoinColumn([{ name: "customer_id", referencedColumnName: "id" }])
-  customer!: Customers;
+  customer!: Relation<Customers>;
 
   @ManyToOne(() => Stores, (stores) => stores.sales)
   @JoinColumn([{ name: "store_id", referencedColumnName: "id" }])
-  store!: Stores;
+  store!: Relation<Stores>;
 
   @ManyToOne(() => SubBrands, (subBrands) => subBrands.sales)
   @JoinColumn([{ name: "sub_brand_id", referencedColumnName: "id" }])
-  subBrand!: SubBrands;
+  subBrand!: Relation<SubBrands>;
 }

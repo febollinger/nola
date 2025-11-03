@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { Categories } from "./Categories.js";
 import { Customers } from "./Customers.js";
@@ -55,5 +56,5 @@ export class SubBrands {
 
   @ManyToOne(() => Brands, (brands) => brands.subBrands)
   @JoinColumn([{ name: "brand_id", referencedColumnName: "id" }])
-  brand!: Brands;
+  brand!: Relation<Brands>;
 }

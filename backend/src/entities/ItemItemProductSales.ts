@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  type Relation
 } from "typeorm";
 import { Items } from "./Items.js";
 import { ItemProductSales } from "./ItemProductSales.js";
@@ -43,7 +44,7 @@ export class ItemItemProductSales {
     { onDelete: "CASCADE" }
   )
   @JoinColumn([{ name: "item_product_sale_id", referencedColumnName: "id" }])
-  itemProductSale!: ItemProductSales;
+  itemProductSale!: Relation<ItemProductSales>;
 
   @ManyToOne(
     () => OptionGroups,
