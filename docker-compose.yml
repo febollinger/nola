@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   postgres:
@@ -7,9 +7,9 @@ services:
     environment:
       POSTGRES_DB: challenge_db
       POSTGRES_USER: challenge
-      POSTGRES_PASSWORD: challenge_2024
+      POSTGRES_PASSWORD: challenge2025
     ports:
-      - "5432:5432"
+      - "15432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
@@ -28,13 +28,13 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql://challenge:challenge_2024@postgres:5432/challenge_db
+      DATABASE_URL: postgresql://challenge:challenge2025@postgres:5432/challenge_db
     command: >
       sh -c "
         echo 'Waiting for database to be ready...' &&
         sleep 5 &&
         echo 'Generating challenge data...' &&
-        python generate_data.py --db-url postgresql://challenge:challenge_2024@postgres:5432/challenge_db
+        python generate_data.py --db-url postgresql://challenge:challenge2025@postgres:5432/challenge_db
       "
     profiles:
       - tools
