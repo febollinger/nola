@@ -1,12 +1,17 @@
 import { Router } from "express"
-import { getProductsController } from "../controllers/products.controller.js"
-import { getProductsSalesController } from "../controllers/productSales.controller.js"
+import { deleteProductController, editProductByIdController, getProductByIdController, getProductsController } from "../controllers/products.controller.js"
+import { deleteProductSaleController, editProductSaleByIdController, getProductSaleByIdController, getProductsSalesController } from "../controllers/productSales.controller.js"
 
 export const productsRoute = Router()
 
-//Products
-productsRoute.get("/", getProductsController)
 
-//Products Sale
+productsRoute.get("", getProductsController)
 
 productsRoute.get("/sales", getProductsSalesController)
+productsRoute.get("/sales/:id", getProductSaleByIdController)
+productsRoute.patch("/sales/:id", editProductSaleByIdController)
+productsRoute.delete("/sales/:id", deleteProductSaleController)
+
+productsRoute.get("/:id", getProductByIdController)
+productsRoute.patch("/:id", editProductByIdController)
+productsRoute.delete("/:id", deleteProductController)

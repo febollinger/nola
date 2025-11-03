@@ -1,6 +1,10 @@
 import { Router } from "express"
-import { getDeliveryAdressesController } from "../controllers/deliveryAddresses.controller.js"
+import { createDeliveryAddressesController, deleteDeliveryAddressesController, editDeliveryAddressesByIdController, getDeliveryAddressesByIdController, getDeliveryAddressesController } from "../controllers/deliveryAddresses.controller.js"
 
 export const deliveryAdressesRoute = Router()
 
-deliveryAdressesRoute.get("/", getDeliveryAdressesController)
+deliveryAdressesRoute.get("", getDeliveryAddressesController)
+deliveryAdressesRoute.get("/:id", getDeliveryAddressesByIdController)
+deliveryAdressesRoute.post("", createDeliveryAddressesController)
+deliveryAdressesRoute.patch("/:id", editDeliveryAddressesByIdController)
+deliveryAdressesRoute.delete("/:id", deleteDeliveryAddressesController)

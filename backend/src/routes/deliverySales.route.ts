@@ -1,6 +1,9 @@
 import { Router } from "express"
-import { getDeliverySalesController } from "../controllers/deliverySales.controller.js"
+import { createDeliverySalesController, editDeliverySalesByIdController, getDeliverySalesByIdController, getDeliverySalesController } from "../controllers/deliverySales.controller.js"
 
 export const deliverySalesRoute = Router()
 
-deliverySalesRoute.get("/", getDeliverySalesController)
+deliverySalesRoute.get("", getDeliverySalesController)
+deliverySalesRoute.get("/:id", getDeliverySalesByIdController)
+deliverySalesRoute.post("", createDeliverySalesController)
+deliverySalesRoute.patch("/:id", editDeliverySalesByIdController)
