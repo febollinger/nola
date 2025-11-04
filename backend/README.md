@@ -308,3 +308,82 @@ src/
 ```
 
 <br>
+
+### Sales
+
+```bash
+# GET /sales - No body
+
+# GET /sales - FORMATO DA RESPOSTA - STATUS 200
+[
+
+	"data": [
+		{
+			"id": 551295,
+			"codSale1": null,
+			"codSale2": null,
+			"createdAt": "2025-11-03T02:59:08.400Z",
+			"customerName": null,
+			"saleStatusDesc": "COMPLETED",
+			"totalAmountItems": "98.12",
+			"totalDiscount": "0.00",
+			"totalIncrease": "0.00",
+			"deliveryFee": "9.00",
+			"serviceTaxFee": "0.00",
+			"totalAmount": "107.12",
+			"valuePaid": "107.12",
+			"productionSeconds": 1435,
+			"deliverySeconds": 1791,
+			"peopleQuantity": null,
+			"discountReason": null,
+			"increaseReason": null,
+			"origin": "POS",
+			"productSales": [
+				{
+					"id": 1286863,
+					"saleId": 551295,
+					"productId": 112,
+					"quantity": 1,
+					"basePrice": 81.81,
+					"totalPrice": 98.12,
+					"observations": null
+				}
+			]
+		},
+		{
+			"id": 552303,
+			"codSale1": null,
+			"codSale2": null,
+			"createdAt": "2025-11-03T02:58:13.400Z",
+			"customerName": null,
+			"saleStatusDesc": "COMPLETED",
+			"totalAmountItems": "76.54",
+			"totalDiscount": "0.00",
+			"totalIncrease": "0.00",
+			"deliveryFee": "0.00",
+			"serviceTaxFee": "0.00",
+			"totalAmount": "76.54",
+			"valuePaid": "76.54",
+			"productionSeconds": 809,
+			"deliverySeconds": null,
+			"peopleQuantity": 7,
+			"discountReason": null,
+			"increaseReason": null,
+			"origin": "POS",
+			"productSales": [
+				{
+					"id": 1289192,
+					"saleId": 552303,
+					"productId": 460,
+					"quantity": 1,
+					"basePrice": 76.54,
+					"totalPrice": 76.54,
+					"observations": null
+				}
+			]
+		}...
+]
+]
+```
+
+<br>
