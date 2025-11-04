@@ -387,3 +387,9 @@ src/
 ```
 
 <br>
+
+## Testar a API com Insomnia
+
+Você pode importar nosso workspace no Insomnia para testar a API rapidamente.
+
+[Download Insomnia Workspace](docs/insomnia_nola.json)
