@@ -393,3 +393,13 @@ src/
 Você pode importar nosso workspace no Insomnia para testar a API rapidamente.
 
 [Download Insomnia Workspace](docs/insomnia_nola.json)
+
+## Autor
+
+**Fernanda Bollinger**
+
+- GitHub: [seuusuario](https://github.com/febollinger)
+- LinkedIn: [seulinkedin](https://www.linkedin.com/in/fernandabollinger/)
+- Email: feernanda.bollinger@gmail.com
+
+Agradeço por visitar meu projeto! 😄
